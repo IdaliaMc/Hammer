@@ -1,0 +1,7 @@
+name: Hammer
+version: 1.0
+author: ayato__
+main: fr.ayato.hammer.Main
+commands:
+  hammer:
+    permissions: hammer.use

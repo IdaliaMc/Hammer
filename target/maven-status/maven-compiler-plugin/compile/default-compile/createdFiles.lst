@@ -1,0 +1,5 @@
+fr\ayato\hammer\Main.class
+fr\ayato\hammer\utils\Config.class
+fr\ayato\hammer\commands\HammerCommand.class
+fr\ayato\hammer\listeners\BreakBlockListener.class
+fr\ayato\hammer\hammer\Hammer.class
