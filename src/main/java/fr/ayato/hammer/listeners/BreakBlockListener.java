@@ -40,7 +40,7 @@ public class BreakBlockListener implements Listener {
         Player player = e.getPlayer();
         ItemStack item = player.getItemInHand();
         Player p = e.getPlayer();
-        if (item != null && item.getType() == Material.DIAMOND_PICKAXE && item.hasItemMeta() && item.getItemMeta().hasLore() && item.getItemMeta().getLore().equals(Config.getItemLore())) {
+        if (item != null && item.getType() == Material.IRON_PICKAXE && item.hasItemMeta() && item.getItemMeta().hasLore() && item.getItemMeta().getLore().equals(Config.getItemLore())) {
             Faction faction = FPlayers.getInstance().getByPlayer(p).getFaction();
             Block b = e.getBlock();
             World w = b.getWorld();

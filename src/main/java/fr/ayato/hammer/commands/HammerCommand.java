@@ -5,16 +5,19 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 public class HammerCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (args.length == 1) {
-            Player player = Bukkit.getPlayer(args[0]);
-            player.getInventory().addItem(Hammer.data());
-            player.updateInventory();
+        //check if the player is op
+        Player player = (Player) sender;
+        if (args.length == 1 && ( player.isOp() || player.hasPermission("hammer.give") || sender instanceof ConsoleCommandSender)) {
+            Player player2 = Bukkit.getPlayer(args[0]);
+            player2.getInventory().addItem(Hammer.data());
+            player2.updateInventory();
         } else {
             sender.sendMessage("§cLa commande est /hammer <pseudo>");
         }
