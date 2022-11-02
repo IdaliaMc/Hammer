@@ -13,8 +13,7 @@ public class HammerCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         //check if the player is op
-        Player player = (Player) sender;
-        if (args.length == 1 && ( player.isOp() || player.hasPermission("hammer.give") || sender instanceof ConsoleCommandSender)) {
+        if (args.length == 1 && ( sender.isOp() || sender.hasPermission("hammer.give") || sender instanceof ConsoleCommandSender)) {
             Player player2 = Bukkit.getPlayer(args[0]);
             player2.getInventory().addItem(Hammer.data());
             player2.updateInventory();
